@@ -14,6 +14,7 @@ Set Key="C:\Path\to\keyfile"
  # Nginx
  
 sudo apt update
+
 sudo apt install nginx
 
 sudo ufw enable
