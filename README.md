@@ -1,16 +1,29 @@
 # ssh-key
 
- :: # Set Variable ::
- Set Key="C:\Path\to\keyfile"
+Set Key="C:\Path\to\keyfile"
 
- :: # Remove Inheritance ::
  Cmd /c Icacls %Key% /c /t /Inheritance:d
 
- :: # Set Ownership to Owner ::
  Cmd /c Icacls %Key% /c /t /Grant %UserName%:F
 
- :: # Remove All Users, except for Owner ::
  Cmd /c Icacls %Key% /c /t /Remove Administrator "Authenticated Users" BUILTIN\Administrators BUILTIN Everyone System Users
 
- :: # Verify ::
+
  Cmd /c Icacls %Key%
+ 
+ # Nginx
+ 
+sudo apt update
+sudo apt install nginx
+
+sudo ufw enable
+
+sudo ufw app list
+
+sudo ufw allow 'Nginx HTTP'
+
+sudo ufw status
+
+systemctl status nginx
+
+
