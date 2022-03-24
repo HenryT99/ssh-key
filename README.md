@@ -27,19 +27,19 @@ sudo ufw status
 
 systemctl status nginx
 
-## Key SSH
-# gen private key for SSH
+# Key SSH
+## gen private key for SSH
 puttygen -t rsa -b 2048 -o private.ppk
 
-# convert ppk to pem
+## convert ppk to pem
 puttygen private.ppk -O private-openssh -o private.pem
 
-# gen public key from private key
+## gen public key from private key
 openssl rsa -in private.pem -pubout
 
-# gen public key for authorized_key
+## gen public key for authorized_key
 ssh-keygen -y -f private.pem
 
 
-# format old private key
+## format old private key
 openssl rsa -in private.key -pubout
