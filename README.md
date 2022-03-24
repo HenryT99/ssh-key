@@ -41,3 +41,5 @@ openssl rsa -in private.pem -pubout
 ssh-keygen -y -f private.pem
 
 
+# format old private key
+openssl rsa -in private.key -pubout
